@@ -4,8 +4,8 @@ import Axios from "axios";
 import Corona from "./Corona";
 import moment from "moment";
 
-const TOKEN =
-  "pk.eyJ1IjoidW5pcXVlZ2ludW4iLCJhIjoiY2s4YWJsN2N5MDBvcTNkcGl2Mmhqd3lwMyJ9.y53yhmEKazJN_AqBXUnVWQ";
+const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
+const baseURL = process.env.REACT_APP_API_URL;
 
 let today = moment().format("M-D-Y");
 let yesterday = moment(today)
@@ -50,9 +50,7 @@ function Map() {
   };
 
   const grabStats = async date => {
-    let response = await Axios.get(
-      `https://covid19.mathdro.id/api/daily/${date}`
-    );
+    let response = await Axios.get(`${baseURL}/${date}`);
     return response.data;
   };
 
