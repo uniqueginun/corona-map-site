@@ -4,8 +4,9 @@ import Axios from "axios";
 import Corona from "./Corona";
 import moment from "moment";
 
-const TOKEN = process.env.REACT_APP_MAPBOX_TOKEN;
-const baseURL = process.env.REACT_APP_API_URL;
+let TOKEN =
+  "pk.eyJ1IjoidW5pcXVlZ2ludW4iLCJhIjoiY2s4YWJsN2N5MDBvcTNkcGl2Mmhqd3lwMyJ9.y53yhmEKazJN_AqBXUnVWQ";
+let baseURL = "https://covid19.mathdro.id/api/daily";
 
 let today = moment().format("M-D-Y");
 let yesterday = moment(today)
